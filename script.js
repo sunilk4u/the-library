@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function Book() {
   this.title = title;
   this.author = author;
@@ -16,4 +18,6 @@ function Book() {
   };
 }
 
-
+function addBookToLibrary() {
+  
+}
