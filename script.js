@@ -28,6 +28,11 @@ function addBookToLibrary(...args) {
   myLibrary.push(book);
 }
 
+function modalAction() {
+  const title = document.getElementById("title").value;
+  
+}
+
 function displayBook() {
   myLibrary.forEach((book) => {
     const container = document.getElementById("book_container");
@@ -51,6 +56,22 @@ function displayBook() {
     div.appendChild(read);
     container.appendChild(div);
   });
+}
+
+function buttonListener() {
+  const modal = document.getElementById("modal");
+  const btn = document.getElementById("add_movie");
+  const span = document.getElementsByClassName("close")[0];
+  
+  modal.style.display = "block";
+  span.onclick = () => {
+    modal.style.display = "none";
+  }
+  window.onclick = (event) => {
+    if(event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
 }
 
 addBookToLibrary("the hobbit", "sunil", 976, true);

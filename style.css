@@ -1,72 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    background: #8e2de2;
-    background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
-    background: linear-gradient(to right, #8c53be, #4a00e0);
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(to right, #8c53be, #4a00e0);
 }
 
 .header {
-    background: #8e2de2;
-    background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
 }
-.header h1{
-    padding: 15px;
-    font-size: 45px;
-    text-transform: uppercase;
-    border-style: solid;
-    border-width: 3px 3px 5px 5px;
-    border-radius: 3px;
+.header h1 {
+  padding: 15px;
+  font-size: 45px;
+  text-transform: uppercase;
+  border-style: solid;
+  border-width: 3px 3px 5px 5px;
+  border-radius: 3px;
 }
 .book_card {
-    border: 2px solid #fff;
+  border: 2px solid #fff;
 }
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .add_movie {
-    background-color: rgb(0, 206, 48);
-    color: #fff;
-    border: 0px;
-    padding: 15px;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
+  background-color: rgb(0, 206, 48);
+  color: #fff;
+  border: 0px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
 }
 .add_movie:hover {
-    background-color: rgb(4, 147, 37);
+  background-color: rgb(4, 147, 37);
 }
 .book_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 25px;
 }
 .book_card {
-    background-color: #fff;
-    padding: 25px;
-    color: #000;
-    border-radius: 10px;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  padding: 25px;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
 }
 .book_card p {
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 800;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  border-radius: 10px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+    width: 100%;
+    margin-top: 11px;
+    background-color: rgb(0, 206, 48);
+    display: inline-block;
+    border: none;
+    padding: 15px;
+    color: #fff;
     text-transform: capitalize;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 15px;
+    border-radius: 8px;
 }
