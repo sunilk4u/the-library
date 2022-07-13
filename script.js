@@ -52,3 +52,7 @@ function displayBook() {
     container.appendChild(div);
   });
 }
+
+addBookToLibrary("the hobbit", "sunil", 976, true);
+addBookToLibrary("the hobbir", "sunil", 978, false);
+displayBook();
