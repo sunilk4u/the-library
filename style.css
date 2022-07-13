@@ -86,7 +86,7 @@ body {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 70%;
+  width: 40%;
   border-radius: 10px;
 }
 .close {
@@ -121,4 +121,10 @@ input[type="submit"] {
     text-transform: capitalize;
     font-size: 15px;
     border-radius: 8px;
+}
+#error {
+    background-color: rgb(255, 176, 176);
+    margin: 7px;
+    padding: 7px;
+    border-radius: 7px;
 }

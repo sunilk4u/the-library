@@ -30,12 +30,39 @@ function addBookToLibrary(...args) {
 
 function modalAction() {
   const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read =document.getElementById("read");
+  const modal = document.getElementById("modal");
+
+  if(title.trim() === "") {
+    document.getElementById("error").textContent = "Title cannot be empty";
+    return
+  }
+  else if (author.trim() === "") {
+    document.getElementById("error").textContent = "Author cannot be empty";
+    return
+  }
+  else if (pages.trim() === "") {
+    document.getElementById("error").textContent = "Pages cannot be empty";
+    return
+  }
   
+  if(read.checked === true) {
+    addBookToLibrary(title, author, pages, true);
+  }
+  else {
+    addBookToLibrary(title, author, pages, false);
+  }
+  displayBook();
+  document.getElementById("modalForm").reset();
+  modal.style.display = "none";
 }
 
 function displayBook() {
+  const container = document.getElementById("book_container");
+  container.innerHTML = "";
   myLibrary.forEach((book) => {
-    const container = document.getElementById("book_container");
     const div = document.createElement("div");
     div.setAttribute("class", "book_card");
     const title = document.createElement("p");
@@ -60,7 +87,6 @@ function displayBook() {
 
 function buttonListener() {
   const modal = document.getElementById("modal");
-  const btn = document.getElementById("add_movie");
   const span = document.getElementsByClassName("close")[0];
   
   modal.style.display = "block";
@@ -74,6 +100,10 @@ function buttonListener() {
   }
 }
 
-addBookToLibrary("the hobbit", "sunil", 976, true);
-addBookToLibrary("the hobbir", "sunil", 978, false);
+const submit = document.getElementById("submit").addEventListener("click", (event) => {
+  event.preventDefault();
+})
+
+addBookToLibrary("the hobbit", "sunil", "976", true);
+addBookToLibrary("the hobbir", "sunil", "978", false);
 displayBook();
