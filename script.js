@@ -68,24 +68,47 @@ function displayBook() {
   myLibrary.forEach((book) => {
     const div = document.createElement("div");
     div.setAttribute("class", "book_card");
+    div.setAttribute("data-attribute", myLibrary.indexOf(book));
+
     const title = document.createElement("p");
     const author = document.createElement("p");
     const pages = document.createElement("p");
     const read = document.createElement("p");
+    const btn = document.createElement("button");
+    const read_btn = document.createElement("button");
+
     title.setAttribute("class", "title");
     author.setAttribute("class", "author");
     pages.setAttribute("class", "pages");
     read.setAttribute("class", "read");
+    btn.setAttribute("class", "del_button");
+    btn.setAttribute("onclick", "deleteAction(this)");
+    read_btn.setAttribute("class", "read_button");
+    read_btn.setAttribute("onclick", "readAction(this)");
+
     title.innerHTML = "<span>Title : </span> " + book.getTitle();
     author.innerHTML = "<span>Author : </span> " + book.getAuthor();
     pages.innerHTML = "<span>Total Pages : </span> " + book.getPages();
     read.innerHTML = book.getRead();
+    btn.textContent = "Delete Book";
+    read_btn.textContent = "Change Read Status";
+
     div.appendChild(title);
     div.appendChild(author);
     div.appendChild(pages);
     div.appendChild(read);
+    div.appendChild(read_btn);
+    div.appendChild(btn);
     container.appendChild(div);
   });
+}
+
+
+function deleteAction(obj) {
+  const div = obj.parentNode;
+  const attr = div.getAttribute("data-attribute");
+  myLibrary.splice(attr, 1);
+  displayBook();
 }
 
 function buttonListener() {
