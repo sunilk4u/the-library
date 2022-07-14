@@ -144,6 +144,6 @@ const submit = document.getElementById("submit").addEventListener("click", (even
   event.preventDefault();
 })
 
-addBookToLibrary("the hobbit", "sunil", "976", true);
-addBookToLibrary("the hobbir", "sunil", "978", false);
+addBookToLibrary("I am a Software Developer", "Sunil Kumar", "560", true);
+addBookToLibrary("You are Breathtaking!", "Sunil Kumar", "978", false);
 displayBook();
