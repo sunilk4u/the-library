@@ -21,6 +21,9 @@ function Book(title, author, pages, read) {
       return "Not read yet.";
     }
   };
+  this.setRead = (new_read) => {
+    this.read = new_read;
+  };
 }
 
 function addBookToLibrary(...args) {
@@ -103,6 +106,17 @@ function displayBook() {
   });
 }
 
+function readAction(obj) {
+  const div = obj.parentNode;
+  const attr = div.getAttribute("data-attribute");
+
+  if(myLibrary[attr].getRead() === "Already read the book!") {
+    myLibrary[attr].setRead(false);
+  } else {
+    myLibrary[attr].setRead(true);
+  }
+  displayBook();
+}
 
 function deleteAction(obj) {
   const div = obj.parentNode;
