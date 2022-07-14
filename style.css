@@ -12,6 +12,14 @@ body {
   background: linear-gradient(to right, #8c53be, #4a00e0);
 }
 
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
 .header {
   background: #8e2de2;
   background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
@@ -111,31 +119,31 @@ input[type="number"] {
   box-sizing: border-box;
 }
 input[type="submit"] {
-    width: 100%;
-    margin-top: 11px;
-    background-color: rgb(0, 206, 48);
-    display: inline-block;
-    border: none;
-    padding: 15px;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: 15px;
-    border-radius: 8px;
+  width: 100%;
+  margin-top: 11px;
+  background-color: rgb(0, 206, 48);
+  display: inline-block;
+  border: none;
+  padding: 15px;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 15px;
+  border-radius: 8px;
 }
 #error {
-    background-color: rgb(255, 176, 176);
-    margin: 7px;
-    padding: 7px;
-    border-radius: 7px;
-    display: none;
+  background-color: rgb(255, 176, 176);
+  margin: 7px;
+  padding: 7px;
+  border-radius: 7px;
+  display: none;
 }
-.del_button, .read_button {
+.del_button,
+.read_button {
   width: 100%;
   margin: 15px 0px 0px 0px;
   padding: 8px;
   border-radius: 8px;
   border: none;
-  
 }
 .del_button {
   background-color: red;
@@ -155,4 +163,15 @@ input[type="submit"] {
   border: 1px solid gray;
   border-radius: 8px;
   background-color: rgb(240, 240, 240);
+}
+.footer {
+  background-color: #fff;
+  margin-top: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+.footer p, .footer a{
+  color: #000;
+  text-decoration: none;
 }
