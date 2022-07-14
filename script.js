@@ -37,14 +37,17 @@ function modalAction() {
 
   if(title.trim() === "") {
     document.getElementById("error").textContent = "Title cannot be empty";
+    document.getElementById("error").style.display = "block";
     return
   }
   else if (author.trim() === "") {
     document.getElementById("error").textContent = "Author cannot be empty";
+    document.getElementById("error").style.display = "block";
     return
   }
   else if (pages.trim() === "") {
     document.getElementById("error").textContent = "Pages cannot be empty";
+    document.getElementById("error").style.display = "block";
     return
   }
   
