@@ -1,5 +1,7 @@
+// Library array to store books
 let myLibrary = [];
 
+// Book constructor to perform operations
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -26,11 +28,13 @@ function Book(title, author, pages, read) {
   };
 }
 
+// function adds book to the library array
 function addBookToLibrary(...args) {
   const book = new Book(...args);
   myLibrary.push(book);
 }
 
+// function performs operations after modal form has been submitted
 function modalAction() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
@@ -38,6 +42,7 @@ function modalAction() {
   const read =document.getElementById("read");
   const modal = document.getElementById("modal");
 
+  // basic javascript form validations
   if(title.trim() === "") {
     document.getElementById("error").textContent = "Title cannot be empty";
     document.getElementById("error").style.display = "block";
@@ -54,6 +59,7 @@ function modalAction() {
     return
   }
   
+  // toggling read button
   if(read.checked === true) {
     addBookToLibrary(title, author, pages, true);
   }
@@ -65,6 +71,7 @@ function modalAction() {
   modal.style.display = "none";
 }
 
+// function displays books using myLibrary array
 function displayBook() {
   const container = document.getElementById("book_container");
   container.innerHTML = "";
@@ -106,6 +113,7 @@ function displayBook() {
   });
 }
 
+// functions performs read button actions
 function readAction(obj) {
   const div = obj.parentNode;
   const attr = div.getAttribute("data-attribute");
@@ -118,6 +126,7 @@ function readAction(obj) {
   displayBook();
 }
 
+// function performs delete button action
 function deleteAction(obj) {
   const div = obj.parentNode;
   const attr = div.getAttribute("data-attribute");
@@ -125,6 +134,7 @@ function deleteAction(obj) {
   displayBook();
 }
 
+// function closes modal form
 function buttonListener() {
   const modal = document.getElementById("modal");
   const span = document.getElementsByClassName("close")[0];
@@ -140,6 +150,7 @@ function buttonListener() {
   }
 }
 
+// stops page from refreshing form submission
 const submit = document.getElementById("submit").addEventListener("click", (event) => {
   event.preventDefault();
 })
