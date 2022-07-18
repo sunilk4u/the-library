@@ -1,29 +1,31 @@
 // Library array to store books
 let myLibrary = [];
 
-// Book constructor to perform operations
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.getTitle = () => {
+// Book class to perform operations
+class Book {
+  constructor (title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  };
+  getTitle = () => {
     return this.title;
   };
-  this.getAuthor = () => {
+  getAuthor = () => {
     return this.author;
   };
-  this.getPages = () => {
+  getPages = () => {
     return this.pages;
   };
-  this.getRead = () => {
+  getRead = () => {
     if (this.read) {
       return "Already read the book!";
     } else {
       return "Not read yet.";
     }
   };
-  this.setRead = (new_read) => {
+  setRead = (new_read) => {
     this.read = new_read;
   };
 }
